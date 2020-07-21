@@ -21,7 +21,6 @@ const Login: React.FC = () => {
       await CacheApi.user.set(result.data.data);
       NavigateApi.startHome();
     } catch (error) {
-      console.error(error);
     } finally {
       setLoading(false);
     }

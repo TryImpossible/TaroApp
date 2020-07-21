@@ -1,0 +1,8 @@
+{
+  "package": "com.barry.taroApp",
+  "name": "TaroApp",
+  "icon": "",
+  "versionName": "0.0.1",
+  "versionCode": 1,
+  "minPlatformVersion": 1000
+}

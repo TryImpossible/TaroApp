@@ -4,6 +4,8 @@ import './app.scss';
 interface AppProps {
   children: React.ReactElement;
 }
-const App: React.FC<AppProps> = ({ children }) => children;
+const App: React.FC<AppProps> = ({ children }) => {
+  return children;
+};
 
 export default App;

@@ -13,15 +13,22 @@ const CacheApi = {
           success: (res) => resolve(res),
           fail: (res) => reject(res),
         });
-      });
+      }).catch(() => {});
     },
     get: () => {
       return new Promise((resolve, reject) => {
         Taro.getStorage({
           key: 'user',
-          success: (res) => resolve(JSON.parse(res.data)),
-          fail: (res) => reject(res),
-        });
+          success: (res) => {
+            if (res && res.data) {
+              return resolve(JSON.parse(res.data));
+            }
+            return reject(res);
+          },
+          fail: (res) => {
+            return reject(res);
+          },
+        }).catch(() => {});
       });
     },
     remove: () => {
@@ -31,7 +38,7 @@ const CacheApi = {
           success: (res) => resolve(res),
           fail: (res) => reject(res),
         });
-      });
+      }).catch(() => {});
     },
   },
 };

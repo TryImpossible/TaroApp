@@ -12,7 +12,7 @@ export default {
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
+    navigationBarTitleText: 'Taro',
     navigationBarTextStyle: 'black',
     backgroundColor: '#f5f5f5',
   },

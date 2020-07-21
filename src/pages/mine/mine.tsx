@@ -1,11 +1,18 @@
 import React from 'react';
 import { View, Text } from '@tarojs/components';
+import CacheApi from '../../storage/CacheApi';
 import './mine.scss';
 
 const Mine: React.FC = () => {
   return (
     <View className="index">
-      <Text>我的</Text>
+      <Text
+        onClick={() => {
+          CacheApi.user.remove();
+        }}
+      >
+        我的
+      </Text>
     </View>
   );
 };
