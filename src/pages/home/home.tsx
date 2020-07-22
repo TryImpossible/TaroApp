@@ -46,6 +46,19 @@ const Home: React.FC = () => {
   ]);
   const [goods, setGoods] = useState([]);
 
+  const loadData = useCallback(async () => {
+    Taro.showLoading();
+    await Promise.all([
+      ServerApi.getHomeBanner().then((result) => {
+        setBanner(result.data);
+      }),
+      ServerApi.getRecommendGoods(1).then((result) => {
+        setGoods(result.data);
+      }),
+    ]);
+    Taro.hideLoading();
+  }, []);
+
   const onRefresh = useCallback(async () => {
     setRefresh(true);
     await Promise.all([
@@ -59,7 +72,7 @@ const Home: React.FC = () => {
     setRefresh(false);
   }, []);
   useEffect(() => {
-    onRefresh();
+    loadData();
   }, []);
 
   return (
