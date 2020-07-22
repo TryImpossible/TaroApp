@@ -16,3 +16,5 @@ declare const process: {
     [key: string]: any;
   };
 };
+
+declare const REQUEST_BASE_URL: string;

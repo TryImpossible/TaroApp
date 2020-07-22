@@ -1,4 +1,5 @@
 import Taro from '@tarojs/taro';
+import globalData from '../utilities/globalData';
 
 /**
  * 缓存Api
@@ -10,7 +11,10 @@ const CacheApi = {
         Taro.setStorage({
           key: 'user',
           data: JSON.stringify(user),
-          success: (res) => resolve(res),
+          success: (res) => {
+            globalData.user = user;
+            return resolve(res);
+          },
           fail: (res) => reject(res),
         });
       }).catch(() => {});
@@ -21,7 +25,9 @@ const CacheApi = {
           key: 'user',
           success: (res) => {
             if (res && res.data) {
-              return resolve(JSON.parse(res.data));
+              const user = JSON.parse(res.data);
+              globalData.user = user;
+              return resolve(user);
             }
             return reject(res);
           },

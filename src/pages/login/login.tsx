@@ -18,7 +18,7 @@ const Login: React.FC = () => {
     try {
       setLoading(true);
       const result = await ServerApi.loginByPassword(username, password);
-      await CacheApi.user.set(result.data.data);
+      await CacheApi.user.set(result.data);
       NavigateApi.startHome();
     } catch (error) {
     } finally {

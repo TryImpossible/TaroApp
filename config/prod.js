@@ -1,8 +1,9 @@
 module.exports = {
   env: {
-    NODE_ENV: '"production"'
+    NODE_ENV: '"production"',
   },
   defineConstants: {
+    REQUEST_BASE_URL: '"https://dsemail.net/"',
   },
   mini: {},
   h5: {
@@ -14,5 +15,5 @@ module.exports = {
      *     .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
      * }
      */
-  }
-}
+  },
+};

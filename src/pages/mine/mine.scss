@@ -1,0 +1,196 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+
+  .navbar {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 51px;
+    background-color: #35ba9b;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      margin-left: 20px;
+      font-size: 20px;
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+
+  .content {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+
+    .user-info {
+      margin: 10px 20px 0px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+      background-size: 100% 120%;
+
+      .top-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 10px 16px 0;
+
+        .name {
+          flex: 1;
+          font-size: 20px;
+          color: #fff;
+          font-weight: bold;
+        }
+
+        .invite-code {
+          font-size: 12px;
+          color: #fff;
+          font-weight: bold;
+        }
+
+        .icon {
+          margin-left: 12px;
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .bottom-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 10px 0px 10px 16px;
+
+        .identity {
+          flex: 1;
+          font-size: 12px;
+          color: #fff;
+        }
+
+        .button {
+          background-color: #35ba9b;
+          border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          height: 30px;
+          padding: 0px 10px;
+
+          .icon {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+          }
+          .invite-friend {
+            font-size: 12px;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .orders {
+      margin: 0px 10px;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 12px 0px;
+
+      .title {
+        padding: 0px 10px;
+        font-size: 14px;
+        color: #233846;
+        font-weight: bold;
+      }
+
+      .items {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        .item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .icon {
+            width: 28px;
+            height: 28px;
+          }
+
+          .text {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #233846;
+          }
+        }
+      }
+    }
+
+    .managers {
+      margin: 10px 10px 0px;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      border-radius: 5px;
+
+      .title {
+        margin-top: 12px;
+        padding: 0px 10px;
+        font-size: 14px;
+        color: #233846;
+        font-weight: bold;
+      }
+
+      .items {
+        margin: 5px 0px;
+        display: flex;
+        flex-direction: column;
+
+        .item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 0px 10px;
+          height: 44px;
+
+          .icon {
+            width: 20px;
+            height: 20px;
+          }
+
+          .text {
+            margin-left: 5px;
+            flex: 1;
+            font-size: 14px;
+            color: #233846;
+          }
+
+          .arrow {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

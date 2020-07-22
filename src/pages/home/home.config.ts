@@ -5,4 +5,5 @@ export default {
   navigationBarTextStyle: 'white',
   navigationBarBackgroundColor: '#35ba9b',
   // navigationStyle: 'custom'
+  backgroundColor: '#f5f5f5',
 } as Config;

@@ -17,6 +17,8 @@ export default {
     backgroundColor: '#f5f5f5',
   },
   tabBar: {
+    color: '#233846',
+    selectedColor: '#35ba9b',
     list: [
       {
         pagePath: RouteMap.home,

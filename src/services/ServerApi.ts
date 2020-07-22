@@ -1,10 +1,10 @@
-import { request } from '@tarojs/taro';
-import { REQUEST_BASE_URL } from '../utilities/Constants';
+import { get, post } from './HttpClient';
 
 const ServerApi = {
-  getHomeBanner: () => request({ url: `${REQUEST_BASE_URL}api/v1/banners`, method: 'POST' }),
-  loginByPassword: (username, password) =>
-    request({ url: `${REQUEST_BASE_URL}api/v1/login`, method: 'POST', data: { username, password }, dataType: 'json' }),
+  loginByPassword: (username, password) => post('api/v1/login', { username, password }),
+  getHomeBanner: () => post('api/v1/banners'),
+  getRecommendGoods: (pageNum, pageSize = 20) =>
+    post('api/v1/products', { commodityType: 1, isRecommend: 1, productType: 0, branchID: 0, pageSize, pageNum }),
 };
 
 export default ServerApi;
