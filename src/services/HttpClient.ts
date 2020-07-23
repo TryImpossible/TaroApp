@@ -1,5 +1,6 @@
-import { request } from '@tarojs/taro';
+import Taro, { request } from '@tarojs/taro';
 import globalData from '../utilities/globalData';
+import NavigateApi from '../navigators/NavigateApi';
 
 const _baseOptions = {
   dataType: 'json',
@@ -23,9 +24,19 @@ const _request = (url, method, data) => {
     console.log(res);
     const { statusCode, data } = res;
     if (statusCode >= 200 && statusCode < 300) {
-      return Promise.resolve(data);
+      switch (data.code) {
+        case 200:
+          return Promise.resolve(data);
+        case 401:
+          NavigateApi.startLogin();
+        default:
+          return Promise.reject(data);
+      }
+    } else {
+      const errMsg = res.errMsg || data.msg;
+      Taro.showToast({ title: errMsg });
+      return Promise.reject(data);
     }
-    return Promise.reject(data);
   });
 };
 
